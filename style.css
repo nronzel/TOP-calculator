@@ -54,18 +54,29 @@ button.clear {
     background-color: #f77e7e;
 }
 
+button.clear:hover {
+    background-color: #e57777;
+}
+
+button.clear:active {
+    background-color: #ce6767;
+}
 button.delete {
     background-color: #fcc68f;
+}
+
+button.delete:hover {
+    background-color: #eab988;
+}
+
+button.delete:active {
+    background-color: #cc9e70;
 }
 
 .delete {
     grid-column-start: 3;
     grid-column-end: 5;
     width: 98%;
-}
-
-.grid-item {
-
 }
 
 .display {
@@ -121,3 +132,4 @@ button.delete {
 .operator:active {
     background-color: #848484;
 }
+
