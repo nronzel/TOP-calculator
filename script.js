@@ -1,6 +1,9 @@
 const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.on-screen-text');
 const clearButton = document.querySelector('button.clear');
+const delButton = document.querySelector('button.delete');
+
+
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -9,16 +12,17 @@ buttons.forEach((button) => {
     clear();
 })
 
-const operator = {
-    '+': add(),
-    '-': subtract(),
-    '*': multiply(),
-    '/': divide(),
-}
+backspace();
 
 function clear() {
     clearButton.addEventListener('click', () => {
-        display.textContent = " ";
+        display.textContent = "";
+    });
+}
+
+function backspace() {
+    delButton.addEventListener('click', () => {
+        display.textContent = display.textContent.slice(0, -1);
     });
 }
 
