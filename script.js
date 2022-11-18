@@ -1,6 +1,15 @@
+const buttons = document.querySelectorAll('button');
 
 
-const buttons = 
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.value);
+    });
+})
+
+
+
+const operators = ['+','-','x','/'];
 
 
 
