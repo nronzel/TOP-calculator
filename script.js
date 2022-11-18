@@ -9,21 +9,25 @@ numbers.forEach((number) => {
     number.addEventListener('click', () => {
         currentNumber.textContent += number.value;
     });
-    clear();
 })
 
-backspace();
-getOperator();
 function getOperator() {
     let operator = "";
     operations.forEach((operation) => {
         operation.addEventListener('click', () => {
-            operator = operation.textContent;
-            console.log(operator);
+            if (operation != null) {
+                operator = operation.textContent;
+                previousNumber.textContent = currentNumber.textContent;
+                currentNumber.textContent = "";
+
+                console.log(operator);
+                return operator
+            } else {
+                return;
+            }
         });
     });
 }
-
 
 function clear() {
     clearButton.addEventListener('click', () => {
@@ -72,3 +76,7 @@ function multiply(previousNumber, currentNumber) {
 function divide(previousNumber, currentNumber) {
     return previousNumber / currentNumber;
 }
+
+clear();
+backspace();
+getOperator();
