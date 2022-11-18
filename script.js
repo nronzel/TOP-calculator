@@ -5,8 +5,6 @@ const previousNumber = document.querySelector('.previousNum');
 const clearButton = document.querySelector('button.clear');
 const delButton = document.querySelector('button.delete');
 
-
-
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
         currentNumber.textContent += number.value;
@@ -15,6 +13,17 @@ numbers.forEach((number) => {
 })
 
 backspace();
+getOperator();
+function getOperator() {
+    let operator = "";
+    operations.forEach((operation) => {
+        operation.addEventListener('click', () => {
+            operator = operation.textContent;
+            console.log(operator);
+        });
+    });
+}
+
 
 function clear() {
     clearButton.addEventListener('click', () => {
@@ -29,22 +38,37 @@ function backspace() {
     });
 }
 
-function operate(a, b, op) {
-
+function compute(operator) {
+    switch (operator) {
+        case '+':
+            add();
+            break
+        case '-':
+            subtract();
+            break
+        case '*':
+            multiply();
+            break
+        case '/':
+            divide();
+            break
+        default:
+            break;
+    }
 }
 
-function add(a, b) {
-    return a + b;
+function add(previousNumber, currentNumber) {
+    return previousNumber + currentNumber;
 }
 
-function subtract(a, b) {
-    return a - b;
+function subtract(previousNumber, currentNumber) {
+    return previousNumber - currentNumber;
 }
 
-function multiply(a, b) {
-    return a * b;
+function multiply(previousNumber, currentNumber) {
+    return previousNumber * currentNumber;
 }
 
-function divide(a, b) {
-    return a / b;
+function divide(previousNumber, currentNumber) {
+    return previousNumber / currentNumber;
 }
