@@ -1,15 +1,15 @@
 const buttons = document.querySelectorAll('button');
-
+const display = document.querySelector('.on-screen-text');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.value);
+        display.textContent = button.value;
     });
 })
 
 
 
-const operators = ['+','-','x','/'];
+const operators = ['+','-','*','/'];
 
 
 
