@@ -39,8 +39,8 @@ button {
 
 .buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: .4rem;
 }
 
@@ -102,11 +102,12 @@ button.delete:active {
     width: 97%;
     height: 90%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: flex-end;
     border-radius: 5px;
     border: 2px solid grey;
-
+    padding: 5px;
 }
 
 .equals {
@@ -121,15 +122,23 @@ button.delete:active {
     background-color: #75b766;
 }
 
-.operator {
+.operations {
     background-color: #bfbfbf;
 }
 
-.operator:hover {
+.operations:hover {
     background-color: #9e9e9e;
 }
 
-.operator:active {
+.operations:active {
     background-color: #848484;
 }
 
+.previousNum {
+    font-size: 1.3rem;
+    color: rgba(0,0,0,.50)
+}
+
+.currentNum {
+    font-size: 1.6rem;
+}

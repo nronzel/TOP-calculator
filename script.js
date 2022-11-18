@@ -1,13 +1,15 @@
-const buttons = document.querySelectorAll('button');
-const display = document.querySelector('.on-screen-text');
+const numbers = document.querySelectorAll('button.numbers');
+const operations = document.querySelectorAll('button.operations');
+const currentNumber = document.querySelector('.currentNum');
+const previousNumber = document.querySelector('.previousNum');
 const clearButton = document.querySelector('button.clear');
 const delButton = document.querySelector('button.delete');
 
 
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        display.textContent += button.value;
+numbers.forEach((number) => {
+    number.addEventListener('click', () => {
+        currentNumber.textContent += number.value;
     });
     clear();
 })
@@ -16,13 +18,14 @@ backspace();
 
 function clear() {
     clearButton.addEventListener('click', () => {
-        display.textContent = "";
+        currentNumber.textContent = "";
+        previousNumber.textContent = "";
     });
 }
 
 function backspace() {
     delButton.addEventListener('click', () => {
-        display.textContent = display.textContent.slice(0, -1);
+        currentNumber.textContent = currentNumber.textContent.slice(0, -1);
     });
 }
 
