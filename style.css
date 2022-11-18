@@ -32,14 +32,40 @@ button {
 
 .main-container {
     border: 2px solid grey;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     background-color: #d9dbdd;
 }
 
 .buttons {
     display: grid;
-    gap: 5px 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: .4rem;
+}
+
+.clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 98%;
+}
+
+button.clear {
+    background-color: #f77e7e;
+}
+
+button.delete {
+    background-color: #fcc68f;
+}
+
+.delete {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    width: 98%;
+}
+
+.grid-item {
+
 }
 
 .display {
@@ -73,15 +99,15 @@ button {
 }
 
 .equals {
-    background-color: #f7a5a0;
+    background-color: #9edd90;
 }
 
 .equals:hover  {
-    background-color: #dd8b87;
+    background-color: #8bce7b;
 }
 
 .equals:active {
-    background-color: #ce8380
+    background-color: #75b766;
 }
 
 .operator {
