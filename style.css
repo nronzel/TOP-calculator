@@ -16,7 +16,8 @@ html {
 body {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -31,15 +32,29 @@ button {
     font-family: 'Fira Sans', sans-serif;
 }
 
+footer {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color:rgb(146, 146, 146);
+    width: 100%;
+    text-align: center;
+    height: 1.6rem;
+}
+
+h3 {
+    padding-top: .2rem;
+}
+
 .main-container {
     border: 2px solid grey;
     padding: 15px;
     border-radius: 5px;
-    background-color: #d9dbdd;
+    background: linear-gradient(180deg, rgba(217,219,221,1) 0%, rgb(218, 218, 218) 100%);
     display: grid;
     max-width:min-content;
-    /* /* grid-template-columns: repeat(4, 1fr); */
-    /* grid-template-rows: min-max(1fr, auto) repeat(5, 1fr); */
+    margin-top: 10rem;
 }
 
 .buttons {
@@ -57,28 +72,28 @@ button {
 }
 
 button.clear {
-    background-color: #f77e7e;
-    border: 2px solid #d13f3f;
+    background: linear-gradient(180deg, rgba(247,126,126,1) 0%, rgba(221,99,99,1) 100%);
+    border: 2px solid #ad1b1b;
 }
 
 button.clear:hover {
-    background-color: #e57777;
+    background: linear-gradient(180deg, rgb(243, 120, 120) 0%, rgb(206, 76, 76) 100%);
 }
 
 button.clear:active {
-    background-color: #ce6767;
+    background: linear-gradient(180deg, rgb(247, 102, 102) 0%, rgb(210, 65, 65) 100%);
 }
 button.delete {
-    background-color: #fcc68f;
+    background: linear-gradient(180deg, rgba(252,198,143,1) 0%, rgba(255,182,108,1) 100%);
     border: 2px solid #e68a2f;
 }
 
 button.delete:hover {
-    background-color: #eab988;
+    background: linear-gradient(180deg, rgb(249, 192, 134) 0%, rgb(239, 167, 94) 100%);
 }
 
 button.delete:active {
-    background-color: #cc9e70;
+    background: linear-gradient(180deg, rgb(251, 188, 125) 0%, rgb(233, 154, 75) 100%);
 }
 
 button.numbers {
@@ -103,7 +118,7 @@ button.numbers:active {
 .inner-screen {
     font-family: 'Dangrek', sans-serif;
     font-size: 1.2rem;
-    background-color: #f2fbfc;
+    background: linear-gradient(180deg, rgba(247,254,255,1) 0%, rgba(244,254,255,1) 7%, rgba(226,252,255,1) 100%);
     max-width: 100%;
     min-height: 5.3rem;
     height: auto;
@@ -155,7 +170,7 @@ button.numbers:active {
 }
 
 button.disabled:hover {
-    background-color: #dfe2e5;
+    background: none;
 }
 
 button.disabled {
