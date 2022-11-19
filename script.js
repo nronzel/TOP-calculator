@@ -1,32 +1,40 @@
 const numbers = document.querySelectorAll('button.numbers');
 const operations = document.querySelectorAll('button.operations');
+const equals = document.querySelector('button.equals');
 const currentNumber = document.querySelector('.currentNum');
 const previousNumber = document.querySelector('.previousNum');
 const clearButton = document.querySelector('button.clear');
 const delButton = document.querySelector('button.delete');
 
-numbers.forEach((number) => {
-    number.addEventListener('click', () => {
-        currentNumber.textContent += number.value;
+let operator = "";
+
+function nums() {
+    numbers.forEach((number) => {
+        number.addEventListener('click', () => {
+            currentNumber.textContent += number.value;
+        });
     });
-})
+}
 
 function getOperator() {
-    let operator = "";
     operations.forEach((operation) => {
         operation.addEventListener('click', () => {
             if (operation != null) {
                 operator = operation.textContent;
                 previousNumber.textContent = currentNumber.textContent;
                 currentNumber.textContent = "";
-
-                console.log(operator);
-                return operator
+                return operator;
             } else {
                 return;
             }
         });
     });
+}
+
+function equal() {
+    equals.addEventListener('click', () => {
+        compute();
+    })
 }
 
 function clear() {
@@ -42,41 +50,41 @@ function backspace() {
     });
 }
 
-function compute(operator) {
+function compute() {
+    const prev = parseInt(previousNumber.textContent);
+    const curr = parseInt(currentNumber.textContent);
+    // const op = operator;
+    console.log(prev);
+    console.log(operator);
+    console.log(curr);
+    let answer;
+    if(isNaN(prev) || isNaN(curr)) return;
     switch (operator) {
         case '+':
-            add();
+            answer = prev + curr;
             break
         case '-':
-            subtract();
+            answer = prev - curr;
             break
-        case '*':
-            multiply();
+        case 'x':
+            answer = prev * curr;
             break
-        case '/':
-            divide();
+        case '÷':
+            answer = prev / curr;
             break
         default:
-            break;
-    }
+            return;
+    };
+    currentNumber.textContent = answer;
+    previousNumber.textContent = "";
 }
 
-function add(previousNumber, currentNumber) {
-    return previousNumber + currentNumber;
+function main() {
+    nums();
+    getOperator();
+    clear();
+    backspace();
+    equal();
 }
 
-function subtract(previousNumber, currentNumber) {
-    return previousNumber - currentNumber;
-}
-
-function multiply(previousNumber, currentNumber) {
-    return previousNumber * currentNumber;
-}
-
-function divide(previousNumber, currentNumber) {
-    return previousNumber / currentNumber;
-}
-
-clear();
-backspace();
-getOperator();
+main();

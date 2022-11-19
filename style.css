@@ -9,13 +9,11 @@
 }
 
 html {
-    width: 100%;
-    height: 100%;
     font-size: 16px;
 }
 
 body {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +26,7 @@ button {
     font-size: 1.2rem;
     border-radius: 4px;
     border: 2px solid grey;
+    outline: none;
 }
 
 .main-container {
@@ -35,12 +34,15 @@ button {
     padding: 15px;
     border-radius: 5px;
     background-color: #d9dbdd;
+    display: grid;
+    /* /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-rows: min-max(1fr, auto) repeat(5, 1fr); */
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: min-max(1fr, auto) repeat(5, 1fr);
     gap: .4rem;
 }
 
@@ -73,6 +75,14 @@ button.delete:active {
     background-color: #cc9e70;
 }
 
+button.numbers:hover {
+    background-color: rgba(0,0,0,.25);
+}
+
+button.numbers:active {
+    background-color: rgba(0,0,0,.50);
+}
+
 .delete {
     grid-column-start: 3;
     grid-column-end: 5;
@@ -90,11 +100,8 @@ button.delete:active {
     border-radius: 5px;
     font-family: 'Dangrek', sans-serif;
     font-size: 1.2rem;
-}
-
-.on-screen-text {
-    padding-right: .3rem;
-    height: 30px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .inner-screen {
@@ -108,18 +115,20 @@ button.delete:active {
     border-radius: 5px;
     border: 2px solid grey;
     padding: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .equals {
-    background-color: #9edd90;
+    background-color: #7e7e7e;
 }
 
 .equals:hover  {
-    background-color: #8bce7b;
+    background-color: #545454;
 }
 
 .equals:active {
-    background-color: #75b766;
+    background-color: #3b3b3b;
 }
 
 .operations {
