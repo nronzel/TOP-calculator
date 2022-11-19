@@ -35,6 +35,7 @@ button {
     border-radius: 5px;
     background-color: #d9dbdd;
     display: grid;
+    max-width:min-content;
     /* /* grid-template-columns: repeat(4, 1fr); */
     /* grid-template-rows: min-max(1fr, auto) repeat(5, 1fr); */
 }
@@ -90,24 +91,21 @@ button.numbers:active {
 }
 
 .display {
-    background-color: #e8e8e8;
-    width: 100%;
-    height: 65px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-family: 'Dangrek', sans-serif;
-    font-size: 1.2rem;
+    /* max-width: 100%;
+    height: auto;
+    min-height: 5rem; */
+/* 
     word-wrap: break-word;
-    word-break: break-all;
+    word-break: break-all; */
 }
 
 .inner-screen {
+    font-family: 'Dangrek', sans-serif;
+    font-size: 1.2rem;
     background-color: #f2fbfc;
-    width: 97%;
-    height: 90%;
+    max-width: 100%;
+    min-height: 5.1rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -115,6 +113,7 @@ button.numbers:active {
     border-radius: 5px;
     border: 2px solid grey;
     padding: 5px;
+    margin-bottom: 10px;
     word-wrap: break-word;
     word-break: break-all;
 }
