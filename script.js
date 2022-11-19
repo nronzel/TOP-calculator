@@ -12,7 +12,6 @@ function nums() {
     numbers.forEach((number) => {
         number.addEventListener('click', () => {
             currentNumber.textContent += number.value;
-            
         });
     });
 }
@@ -55,10 +54,6 @@ function backspace() {
 function compute() {
     const prev = parseInt(previousNumber.textContent);
     const curr = parseInt(currentNumber.textContent);
-
-    console.log(prev);
-    console.log(operator);
-    console.log(curr);
 
     let answer;
     if(isNaN(prev) || isNaN(curr)) return;
