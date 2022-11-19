@@ -19,14 +19,14 @@ function nums() {
 function getOperator() {
     operations.forEach((operation) => {
         operation.addEventListener('click', () => {
-            if (operation != null) {
+            // if (operation != null) {
                 operator = operation.textContent;
-                previousNumber.textContent = currentNumber.textContent;
+                previousNumber.textContent = `${currentNumber.textContent} ${operator}`;
                 currentNumber.textContent = "";
                 return operator;
-            } else {
-                return;
-            }
+            // } else {
+            //     return;
+            // }
         });
     });
 }
@@ -53,10 +53,11 @@ function backspace() {
 function compute() {
     const prev = parseInt(previousNumber.textContent);
     const curr = parseInt(currentNumber.textContent);
-    // const op = operator;
+
     console.log(prev);
     console.log(operator);
     console.log(curr);
+
     let answer;
     if(isNaN(prev) || isNaN(curr)) return;
     switch (operator) {
@@ -75,8 +76,9 @@ function compute() {
         default:
             return;
     };
+
     currentNumber.textContent = answer;
-    previousNumber.textContent = "";
+    previousNumber.textContent = `${prev} ${operator} ${curr}`;
 }
 
 function main() {
