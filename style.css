@@ -90,21 +90,12 @@ button.numbers:active {
     width: 98%;
 }
 
-.display {
-    /* max-width: 100%;
-    height: auto;
-    min-height: 5rem; */
-/* 
-    word-wrap: break-word;
-    word-break: break-all; */
-}
-
 .inner-screen {
     font-family: 'Dangrek', sans-serif;
     font-size: 1.2rem;
     background-color: #f2fbfc;
     max-width: 100%;
-    min-height: 5.1rem;
+    min-height: 5.3rem;
     height: auto;
     display: flex;
     flex-direction: column;
