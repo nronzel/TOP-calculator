@@ -12,6 +12,7 @@ function nums() {
     numbers.forEach((number) => {
         number.addEventListener('click', () => {
             currentNumber.textContent += number.value;
+            
         });
     });
 }
@@ -19,14 +20,14 @@ function nums() {
 function getOperator() {
     operations.forEach((operation) => {
         operation.addEventListener('click', () => {
-            // if (operation != null) {
-                operator = operation.textContent;
-                previousNumber.textContent = `${currentNumber.textContent} ${operator}`;
-                currentNumber.textContent = "";
-                return operator;
-            // } else {
-            //     return;
-            // }
+            if (currentNumber === '') return
+            if (previousNumber !== '') {
+                compute();
+            }
+            operator = operation.textContent;
+            previousNumber.textContent = `${currentNumber.textContent} ${operator}`;
+            currentNumber.textContent = "";
+            return operator;
         });
     });
 }
@@ -41,6 +42,7 @@ function clear() {
     clearButton.addEventListener('click', () => {
         currentNumber.textContent = "";
         previousNumber.textContent = "";
+        operator = undefined;
     });
 }
 
@@ -78,7 +80,7 @@ function compute() {
     };
 
     currentNumber.textContent = answer.toLocaleString('en-US');
-    previousNumber.textContent = `${prev} ${operator} ${curr}`;
+    previousNumber.textContent = "" ;// `${prev} ${operator} ${curr}`;
 }
 
 function main() {
