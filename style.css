@@ -120,7 +120,8 @@ button.numbers:active {
 }
 
 .equals {
-    background-color: #7e7e7e;
+    background-color: #919191;
+    border: 2px  solid rgb(78, 78, 78)
 }
 
 .equals:hover  {
@@ -150,4 +151,12 @@ button.numbers:active {
 
 .currentNum {
     font-size: 1.6rem;
+}
+
+button.disabled:hover {
+    background-color: #dfe2e5;
+}
+
+button.disabled {
+    border: none;
 }
