@@ -77,7 +77,7 @@ function compute() {
             return;
     };
 
-    currentNumber.textContent = answer;
+    currentNumber.textContent = answer.toLocaleString('en-US');
     previousNumber.textContent = `${prev} ${operator} ${curr}`;
 }
 
